@@ -65,7 +65,11 @@ class UserController {
                 reject(e);
             }
     
-            fileReader.readAsDataURL(file);
+            if(file) {
+                fileReader.readAsDataURL(file);
+            } else {
+                resolve('dist/img/boxed-bg.jpg');
+            }
     
         })
 
@@ -82,14 +86,19 @@ class UserController {
     
                 if(field.checked){
     
-                    user[field.name] = field.value;
+                user[field.name] = field.value;
+
                 }
     
-                } else {
+            } else if(field.name == 'admin'){
+                    
+                user[field.name] = field.checked;
+                    
+            }   else    {
     
-                    user[field.name] = field.value
+                user[field.name] = field.value
     
-                }
+            }
     
             
     
@@ -111,7 +120,7 @@ class UserController {
 
     addLine(dataUser, tableId){
     
-        this.tableEl.innerHTML = `
+        this.tableEl.innerHTML += `
         
         <tr>
         <td><img src="${dataUser.photo}" alt="User Image" class="img-circle img-sm"></td>
