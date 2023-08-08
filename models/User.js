@@ -3,7 +3,7 @@ class User {
     constructor(name, gender, birth, country, email, password, photo, admin){
 
         // *variaveis dentro de uma classe são chamadas de atributo ou propriedade do objeto*
-
+        this._id
         this._name =                     name;
 
         
@@ -17,6 +17,12 @@ class User {
         this._photo = photo;
         this._admin = admin;
         this._register = new Date();
+    }
+
+    get id(){
+
+        return this._id;
+
     }
 
     get register(){
@@ -73,6 +79,49 @@ class User {
             }
 
         }
+
+    }
+
+    getNewID(){
+
+        if(!window.id) window.id = 0;
+
+        id++
+
+        return id;
+
+    }
+
+    save(){
+
+        let users = User.getUsersStorage();
+
+        if(this.id > 0){
+
+            users.map(u=>{
+
+
+                if(u._id === this.id){
+
+                    u = this;
+
+                }
+
+                return u;
+
+            })
+
+        } else {
+
+            this.id = this.getNewID();
+
+            users.push(this);
+
+            
+
+        }
+
+        localStorage.setItem("users", JSON.stringify(users));
 
     }
 
