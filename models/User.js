@@ -1,6 +1,6 @@
 class User {
 
-    constructor(name, gender, birth, country, email, pwd, photo, admin){
+    constructor(name, gender, birth, country, email, password, photo, admin){
 
         // *variaveis dentro de uma classe são chamadas de atributo ou propriedade do objeto*
 
@@ -13,7 +13,7 @@ class User {
         this._birth = birth;
         this._country = country;
         this._email = email;
-        this._pwd = pwd;
+        this._password = password;
         this._photo = photo;
         this._admin = admin;
         this._register = new Date();
@@ -43,8 +43,8 @@ class User {
         return this._email;
     }
 
-    get pwd(){
-        return this._pwd;
+    get password(){
+        return this._password;
     }
 
     get photo(){
@@ -57,6 +57,23 @@ class User {
 
     set photo(value){
         this._photo = value;
+    }
+
+    loadFromJSON(json){
+
+        for(let name in json){
+
+            switch(name){
+
+                case '_register':
+                    this[name] = new Date(json[name]);
+                break;
+                default:
+                    this[name] = json[name];
+            }
+
+        }
+
     }
 
 }
