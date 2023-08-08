@@ -2,10 +2,13 @@ class User {
 
     constructor(name, gender, birth, country, email, pwd, photo, admin){
 
-        // *variaveis dentro de uma classe é chamado de atributo ou propriedade do objeto*
+        // *variaveis dentro de uma classe são chamadas de atributo ou propriedade do objeto*
 
-        this._name = name;
-//nome da propriedade do obj / nome do parametro passado no construtor
+        this._name =                     name;
+
+        
+//nome da propriedade do obj / nome do parametro passado no constructor
+
         this._gender = gender;
         this._birth = birth;
         this._country = country;

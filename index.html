@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
   <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
   <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
-  <script src="classes/utils.js" defer></script>
+  <script src="classes/Utils.js" defer></script>
   <script src="models/User.js" defer></script>
   <script src="controllers/UserController.js" defer></script>
   <script src="index.js" defer></script>
@@ -209,7 +209,7 @@
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputName">Nome</label>
-                  <input type="text" class="form-control" id="exampleInputName" placeholder="Digite o nome do usuário" name="name">
+                  <input type="text" required class="form-control" id="exampleInputName" placeholder="Digite o nome do usuário" name="name">
                 </div>
                 <div class="form-group">
                   <label>Gênero</label>
@@ -477,11 +477,11 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">E-mail</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite o e-mail" name="email">
+                  <input type="email" required class="form-control" id="exampleInputEmail1" placeholder="Digite o e-mail" name="email">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Senha</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Crie uma senha" name="password">
+                  <input type="password" required class="form-control" id="exampleInputPassword1" placeholder="Crie uma senha" name="password">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputFile">Foto</label>
